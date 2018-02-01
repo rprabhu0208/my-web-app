@@ -5,9 +5,9 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
  
 @Injectable()
-export class AuthenticationService {
+export class AuthenticationService { 
 
-login(username:string,password : string){
+login(username:string,password : string): boolean{
     if(username == 'rohan' && password == 'rohan123'){ 
         var user : User = {
             id :1,
@@ -16,7 +16,11 @@ login(username:string,password : string){
             password:'rohan123',
             username:'rohan'
         } 
-        localStorage.setItem('currentUser',JSON.stringify(user))
+     localStorage.setItem('currentUser',JSON.stringify(user))
+     return true;
+    }
+    else {
+        return false;
     }
 
 }

@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { AuthenticationService } from "../../../services/authentication.service";
+import { Router } from "@angular/router";
+import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
 
 
 @Component({
@@ -7,14 +9,18 @@ import { AuthenticationService } from "../../../services/authentication.service"
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
-    constructor(private authService : AuthenticationService){
+    constructor(private authService : AuthenticationService,private router: Router){
         
     }
-
+    ngOnInit(){
+        
+    }
     login(username:string, password:string){
         console.log(username)
-     //   this.authService.login(username,password);
+       if(this.authService.login(username,password)){
+           this.router.navigate(['dashboard'])
+       }
     }
 }
