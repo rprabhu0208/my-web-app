@@ -12,10 +12,10 @@ import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
 export class LoginComponent implements OnInit {
 
     constructor(private authService : AuthenticationService,private router: Router){
-        
+        localStorage.clear()
     }
     ngOnInit(){
-        
+     
     }
     login(username:string, password:string){
        this.authService.login(username,password) 

@@ -8,17 +8,19 @@ import { NavBarComponent } from './components/HeaderComponent/NavBarComponent/na
 import { router } from '../app/app.router'
 import { AuthenticationService } from './services/authentication.service';
 import { AuthGuard } from './auth-guard.service';
+import { UnAuthorizedComponent } from './components/UnAuthorizedComponent/unauthorized.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent
     ,NavBarComponent
+    ,UnAuthorizedComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(router) 
+    RouterModule.forRoot(router,{ useHash: true }) 
   ],
-  providers: [AuthenticationService,AuthGuard],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,6 +9,7 @@ import { AuthGuard } from '../../auth-guard.service';
 @NgModule({
     declarations :[LoginComponent,DashBoardComponent],
     imports: [homeRouter],
-    providers: [AuthenticationService, AuthGuard]
+    providers: [AuthGuard],
+   
 })
 export class HomeModule  {}

@@ -17,7 +17,7 @@ const HOME_ROUTER : Routes = [
     {
         path: 'dashboard',
         component : DashBoardComponent
-        ,canActivate:[AuthGuard]
+        ,canActivate :[AuthGuard]
     }
 
 ]
