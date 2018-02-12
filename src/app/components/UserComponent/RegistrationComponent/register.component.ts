@@ -9,6 +9,10 @@ import { FormGroup, FormControl } from "@angular/forms";
 export class RegisterComponent {
     registerForm : FormGroup;
 
+    constructor(){
+        this.initForm()
+    }
+
     register(){
         console.log(this.registerForm)
     }
