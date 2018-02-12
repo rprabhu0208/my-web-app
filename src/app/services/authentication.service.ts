@@ -1,8 +1,7 @@
 import {User} from '../Models/user'
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map' 
+import { Observable } from 'rxjs/Observable'; 
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Router } from '@angular/router';
@@ -10,7 +9,7 @@ import { ActivatedRoute, RouterStateSnapshot } from '@angular/router';
  
 @Injectable()
 export class AuthenticationService   {  
-    loggedIn = new BehaviorSubject<boolean>(false)
+    loggedIn = new BehaviorSubject<boolean>(false) 
     constructor(private router: Router ){
        
     }
@@ -20,15 +19,19 @@ export class AuthenticationService   {
     } 
  
     isAuthencated(){
+        var currentLoggedIn = false;
         const promise = new Promise(
             (resolve,reject) => {
-                setTimeout(() => {  
-                    resolve(this.loggedIn.getValue())
-                }, 800);
+                if(localStorage.getItem('currentUser')){
+                    this.loggedIn.next(true);
+                }
+                else {
+                    this.loggedIn.next(false);
+                }
+                resolve(this.loggedIn.getValue()) 
             }
         )
-        return promise;
-        
+        return promise;  
     }
  
     login(username:string,password : string): any{
@@ -39,10 +42,9 @@ export class AuthenticationService   {
                 lastname:'prabhu',
                 password:'rohan123',
                 username:'rohan'
-            } 
-            debugger;
+            }  
         localStorage.setItem('currentUser',JSON.stringify(user)) 
-        this.loggedIn.next(true);
+        this.loggedIn.next(true); 
         this.router.navigate(['dashboard'])
         }
         else {
@@ -52,7 +54,7 @@ export class AuthenticationService   {
 
     logout(){  
         localStorage.clear() 
-        this.loggedIn.next(false);
+        this.loggedIn.next(false); 
         this.router.navigate(['login'])
     }   
 }

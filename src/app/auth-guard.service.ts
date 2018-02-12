@@ -6,6 +6,7 @@ import { Observable } from "rxjs/Observable";
 import { Router ,Route} from "@angular/router";
 import { CanActivateChild, CanLoad } from "@angular/router/src/interfaces";
 import { debug } from "util";
+import { User } from "./Models/user";
  
 @Injectable()
 export class AuthGuard implements CanActivate , CanActivateChild, CanLoad {
@@ -14,10 +15,9 @@ export class AuthGuard implements CanActivate , CanActivateChild, CanLoad {
     }
 
     isAuthenticated(){
-        return this.authService.isAuthencated().then(
-            (authenticated: boolean) => {  
-                debugger
-                if(authenticated)
+        return this.authService.isAuthencated().then( 
+            (currentUser: boolean) => {   
+                if(currentUser )
                     return true;
                 else{
                   this.router.navigate(['login'])
