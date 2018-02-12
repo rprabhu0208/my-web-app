@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { FormGroup, FormControl } from "@angular/forms";
 
 
 @Component({
@@ -6,5 +7,18 @@ import { Component } from "@angular/core";
     templateUrl: './register.component.html'
 })
 export class RegisterComponent {
+    registerForm : FormGroup;
 
+    register(){
+        console.log(this.registerForm)
+    }
+    private initForm(){
+        this.registerForm = new FormGroup({
+            'firstname' : new FormControl(),
+            'lastname' : new FormControl(),
+            'email' : new FormControl(),
+            'username' : new FormControl(),
+            'password' : new FormControl(),
+        })
+    }
 }
