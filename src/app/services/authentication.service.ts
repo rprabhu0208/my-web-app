@@ -34,14 +34,15 @@ export class AuthenticationService   {
         return promise;  
     }
  
-    login(username:string,password : string): any{
-        if(username == 'rohan' && password == 'rohan123'){ 
+    login(email:string,password : string): any{
+        if(email == 'rohan.prabhu@gmail.com' && password == 'rohan123'){ 
             var user : User = {
                 id :1,
                 firstname:'rohan',
                 lastname:'prabhu',
                 password:'rohan123',
-                username:'rohan'
+                username:'rohan',
+                email:'rohan.prabhu@gmail.com'
             }  
         localStorage.setItem('currentUser',JSON.stringify(user)) 
         this.loggedIn.next(true); 

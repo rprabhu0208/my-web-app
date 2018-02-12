@@ -9,6 +9,7 @@ import { router } from '../app/app.router'
 import { AuthenticationService } from './services/authentication.service';
 import { AuthGuard } from './auth-guard.service';
 import { UnAuthorizedComponent } from './components/UnAuthorizedComponent/unauthorized.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { UnAuthorizedComponent } from './components/UnAuthorizedComponent/unauth
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(router,{ useHash: true }) 
   ],
   providers: [AuthenticationService],

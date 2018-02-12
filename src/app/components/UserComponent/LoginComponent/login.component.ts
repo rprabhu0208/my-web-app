@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { AuthenticationService } from "../../../services/authentication.service";
 import { Router } from "@angular/router";
+import { NgForm } from '@angular/forms'
 import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
 
 
@@ -17,8 +18,7 @@ export class LoginComponent implements OnInit {
     ngOnInit(){
      
     }
-    login(username:string, password:string){
-       this.authService.login(username,password) 
-   
+    login(form: NgForm){ 
+       this.authService.login(form.value.email,form.value.password)  
     }
 }
