@@ -6,17 +6,22 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Router } from '@angular/router';
 import { ActivatedRoute, RouterStateSnapshot } from '@angular/router'; 
- 
+import {Http,RequestOptions,Headers} from '@angular/http'
+import  'rxjs'
 @Injectable()
 export class AuthenticationService   {  
     loggedIn = new BehaviorSubject<boolean>(false) 
-    constructor(private router: Router ){
+    constructor(private router: Router, private http : Http ){
        
     }
 
     get isLoggedIn(){
         return this.loggedIn.asObservable();
     } 
+
+    set isLoggedIn(value:any){
+        this.loggedIn.next(value);
+    }
  
     isAuthencated(){
         var currentLoggedIn = false;
@@ -33,25 +38,57 @@ export class AuthenticationService   {
         )
         return promise;  
     }
- 
-    login(email:string,password : string): any{
-        if(email == 'rohan.prabhu@gmail.com' && password == 'rohan123'){ 
-            var user : User = {
-                id :1,
-                firstname:'rohan',
-                lastname:'prabhu',
-                password:'rohan123',
-                username:'rohan',
-                email:'rohan.prabhu@gmail.com'
-            }  
-        localStorage.setItem('currentUser',JSON.stringify(user)) 
-        this.loggedIn.next(true); 
-        this.router.navigate(['dashboard'])
-        }
-        else {
-            this.router.navigate(['login'],{ queryParams : { msg : 'invalid' } })
-        } 
+    login(email:string,password:string) : Observable<User>{
+     
+            return this.http
+                    .get('http://localhost:5000/users?email='+ email)
+                    .map((response) => {
+                        console.log(response)
+                        return response.json()[0];
+            })  
+        // return this.http.get('http://localhost:5000/users?email='+ email).subscribe(
+        //     (response) => {
+        //         return response.json()[0];
+        //     },
+        //     (error) =>{
+        //         return null;
+        //     }
+        // ) 
     }
+    // login(email:string,password : string): any {
+    //      this.http.get('http://localhost:5000/users?email='+ email).subscribe(
+    //       (response)  =>{ 
+    //         if(response.json()[0]){
+    //             let user= new User()
+    //             user  = response.json()[0];
+
+    //             if(user.email == email && user.password == password){
+    //                  localStorage.setItem('currentUser',JSON.stringify(user)) 
+    //                  this.loggedIn.next(true); 
+    //                  this.router.navigate(['dashboard'])
+    //             } 
+    //         }
+    //         this.router.navigate(['login'],{ queryParams : { msg : 'invalid' } })
+    //       }
+    //     )
+    //     // if(email == 'rohan.prabhu@gmail.com' && password == 'rohan123'){ 
+    //     // //     var user : User = {
+    //     // //         id :1,
+    //     // //         firstname:'rohan',
+    //     // //         lastname:'prabhu',
+    //     // //         password:'rohan123',
+    //     // //         username:'rohan',
+    //     // //         email:'rohan.prabhu@gmail.com'
+    //     // //     }  
+    //     // // localStorage.setItem('currentUser',JSON.stringify(user)) 
+    //     // this.loggedIn.next(true); 
+    //     // this.router.navigate(['dashboard'])
+    //     // }
+    //     // else {
+    //     //     this.router.navigate(['login'],{ queryParams : { msg : 'invalid' } })
+    //     // } 
+    // }
+ 
 
     logout(){  
         localStorage.clear() 

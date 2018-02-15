@@ -6,24 +6,26 @@
                     <h3 class="panel-title">Sign up <small>Reactive Forms</small></h3>
                      </div>
                      <div class="panel-body">
-                    <form   [formGroup]="registerForm" (ngSubmit)="register()">
+                    <form  [formGroup]="registerForm" (ngSubmit)="register()"> 
                         <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6">
+                            <div class="col-xs-6 col-sm-6 col-md-6"> 
+                                <div *ngIf="!registerForm.get('firstname').valid && registerForm.get('firstname').touched"> 
+                                    <span ><small>Please enter First Name</small></span></div>  
                                 <div class="form-group">
-                        <input type="text"  
-                        id="firstname" 
-                        class="form-control input-sm" 
-                        formControlName="firstname"
-                        placeholder="First Name">
-                                </div>
+                                    <input type="text"  
+                                    id="firstname" 
+                                    class="form-control input-sm" 
+                                    formControlName="firstname"
+                                    placeholder="First Name">
+                                </div> 
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <input type="text"  
-                                    id="lastname"
-                                     class="form-control input-sm" 
-                                     formControlName="lastname"
-                                     placeholder="Last Name">
+                                        id="lastname"
+                                        class="form-control input-sm" 
+                                        formControlName="lastname"
+                                        placeholder="Last Name">
                                 </div>
                             </div>
                         </div>
@@ -62,7 +64,7 @@
                             </div>
                         </div>
                         
-                        <input type="submit" value="Register" class="btn btn-info btn-block">
+                        <input [disabled]="!registerForm.valid" type="submit" value="Register" class="btn btn-info btn-block">
                     
                     </form>
                 </div>
