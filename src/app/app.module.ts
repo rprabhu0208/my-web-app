@@ -11,7 +11,8 @@ import { router } from '../app/app.router'
 import { AuthenticationService } from './services/authentication.service';
 import { AuthGuard } from './auth-guard.service';
 import { UnAuthorizedComponent } from './components/UnAuthorizedComponent/unauthorized.component';
-import 'rxjs'
+import 'rxjs' 
+import { HomeModule } from './modules/HomeModule/home.module';
  
  
 
@@ -20,13 +21,14 @@ import 'rxjs'
     AppComponent,
     HeaderComponent
     ,NavBarComponent
-    ,UnAuthorizedComponent
+    ,UnAuthorizedComponent 
   ],
   imports: [
     BrowserModule,
     FormsModule, 
     HttpModule,
     ReactiveFormsModule,  
+    
     RouterModule.forRoot(router,{ useHash: true }) 
   ],
   providers: [AuthenticationService],

@@ -1,0 +1,404 @@
+{
+    "PolicyTxnId": 1506444,
+    "IsExcess": false,
+    "Fees": [
+        {
+            "TaxId": 0,
+            "TaxTypeId": 134,
+            "FeeAmt": 75.0
+        }
+    ],
+    "UpdateQuoteRequest": {
+        "PolicyTxnId": 1506444,
+        "ClassOfBusinessId": 218,
+        "IsExcess": false,
+        "UWQuoteId": 1249535,
+        "QuoteDescription": "Portal Update Coverages",
+        "Coverages": [
+            {
+                "AggregateLimit": 1000000.0,
+                "BenchMarkPremiumAmount": 0.0,
+                "CovTypeCode": "CPL",
+                "CovTypeId": 11186,
+                "PerOccurDed": 5000.0,
+                "PerOccurLimit": 1000000.0,
+                "PremiumAmount": 2189.0,
+                "CovRetroDate": "2018-02-13T00:00:00Z",
+                "LiabilityLimit": 0.0,
+                "AttachmentPoint": 0.0
+            },
+            {
+                "AggregateLimit": 1000000.0,
+                "BenchMarkPremiumAmount": 0.0,
+                "CovTypeCode": "PIL",
+                "CovTypeId": 11187,
+                "PerOccurDed": 5000.0,
+                "PerOccurLimit": 1000000.0,
+                "PremiumAmount": 250.0,
+                "CovRetroDate": "2018-02-20T00:00:00",
+                "LiabilityLimit": 0.0,
+                "AttachmentPoint": 0.0
+            }
+        ],
+        "UpdateUserConfigurableDataElement": {
+            "ElementUpdateRequests": [
+                {
+                    "ElementId": 10478,
+                    "ElementCode": "COB1",
+                    "ResponseType": "CombinationResponse",
+                    "SelectedDataElementResponseIds": [
+                        11689
+                    ],
+                    "DecimalValue": 1.0,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10505,
+                    "ElementCode": "COB1Rate",
+                    "ResponseType": "DecimalResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "DecimalValue": 1.58,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10568,
+                    "ElementCode": "Licensed1",
+                    "ResponseType": "ChooseOneComboResponse",
+                    "SelectedDataElementResponseIds": [
+                        11959
+                    ],
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10565,
+                    "ElementCode": "CreditScore",
+                    "ResponseType": "IntegerResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "IntegerValue": 471,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10566,
+                    "ElementCode": "CreditScoreReportID",
+                    "ResponseType": "FreeTextResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "FreeTextValue": "TEST123",
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10484,
+                    "ElementCode": "PriorYearGrossRev",
+                    "ResponseType": "MoneyResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "MoneyValue": 30002.0,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10485,
+                    "ElementCode": "EstGrossRev",
+                    "ResponseType": "MoneyResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "MoneyValue": 20000.0,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10486,
+                    "ElementCode": "PercDesign",
+                    "ResponseType": "ChooseOneComboResponse",
+                    "SelectedDataElementResponseIds": [
+                        11583
+                    ],
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10488,
+                    "ElementCode": "CPLNumClaims",
+                    "ResponseType": "IntegerResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "IntegerValue": 0,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10489,
+                    "ElementCode": "PILNumClaims",
+                    "ResponseType": "IntegerResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "IntegerValue": 0,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10574,
+                    "ElementCode": "CGLClaims",
+                    "ResponseType": "ChooseOneResponse",
+                    "SelectedDataElementResponseIds": [
+                        11972
+                    ],
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10575,
+                    "ElementCode": "CurrentCPLCov",
+                    "ResponseType": "ChooseOneComboResponse",
+                    "SelectedDataElementResponseIds": [
+                        11973
+                    ],
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10576,
+                    "ElementCode": "CurrentPILCov",
+                    "ResponseType": "ChooseOneComboResponse",
+                    "SelectedDataElementResponseIds": [
+                        11975
+                    ],
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10511,
+                    "ElementCode": "RatingBasis",
+                    "ResponseType": "MoneyResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "MoneyValue": 150000.0,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10547,
+                    "ElementCode": "FSF",
+                    "ResponseType": "DecimalResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "DecimalValue": 1.1,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10548,
+                    "ElementCode": "ClassRate",
+                    "ResponseType": "DecimalResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "DecimalValue": 1.58,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10577,
+                    "ElementCode": "SchedModOverride",
+                    "ResponseType": "DecimalResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "DecimalValue": 0.4,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10550,
+                    "ElementCode": "ClaimsMadeFactor",
+                    "ResponseType": "DecimalResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "DecimalValue": 0.9,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10551,
+                    "ElementCode": "BasePremium",
+                    "ResponseType": "MoneyResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "MoneyValue": 938.52,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10552,
+                    "ElementCode": "LimitDedFactor",
+                    "ResponseType": "DecimalResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "DecimalValue": 1.944,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10553,
+                    "ElementCode": "CreditScoreFactor",
+                    "ResponseType": "DecimalResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "DecimalValue": 1.2,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10554,
+                    "ElementCode": "PremAtLimits",
+                    "ResponseType": "MoneyResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "MoneyValue": 2189.379456,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10555,
+                    "ElementCode": "MinPrem",
+                    "ResponseType": "MoneyResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "MoneyValue": 1725.43608,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10556,
+                    "ElementCode": "CalcPrem",
+                    "ResponseType": "MoneyResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "MoneyValue": 2189.379456,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10557,
+                    "ElementCode": "BIExclusion",
+                    "ResponseType": "DecimalResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "DecimalValue": 1.0,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10558,
+                    "ElementCode": "FungiExclusion",
+                    "ResponseType": "DecimalResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "DecimalValue": 1.0,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10559,
+                    "ElementCode": "ResidExclusion",
+                    "ResponseType": "DecimalResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "DecimalValue": 1.0,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10560,
+                    "ElementCode": "PILBaseExposure",
+                    "ResponseType": "MoneyResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "MoneyValue": 2189.379456,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10561,
+                    "ElementCode": "PILClaimsMadeFactor",
+                    "ResponseType": "DecimalResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "DecimalValue": 0.9,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10579,
+                    "ElementCode": "PILRateOverride",
+                    "ResponseType": "DecimalResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "DecimalValue": 0.1,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10563,
+                    "ElementCode": "PILCalcPrem",
+                    "ResponseType": "MoneyResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "MoneyValue": 197.04415104000003,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10564,
+                    "ElementCode": "PILMinPrem",
+                    "ResponseType": "MoneyResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "MoneyValue": 250.0,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10578,
+                    "ElementCode": "OverrideRatingBase",
+                    "ResponseType": "MoneyResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "MoneyValue": 0.0,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10496,
+                    "ElementCode": "SelectedRevenue",
+                    "ResponseType": "MoneyResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "MoneyValue": 25001.0,
+                    "BooleanValue": false
+                },
+                {
+                    "ElementId": 10498,
+                    "ElementCode": "FeeEstimate",
+                    "ResponseType": "DecimalResponse",
+                    "SelectedDataElementResponseIds": [],
+                    "DecimalValue": 0.065,
+                    "BooleanValue": false
+                }
+            ]
+        },
+        "CreateActivityLogItem": {
+            "ActivityDate": "2018-02-20T18:11:04.0201191+05:30",
+            "ActivityType": "Step3NewTxn",
+            "Amount": 2514.0,
+            "Description": "",
+            "LoggedInUser": "Agent: JENNIFER BARISH (300041)",
+            "PolicyTxnId": 1506444
+        },
+        "FormSetId": 10591
+    },
+    "OptionalEndorsementForms": [
+        {
+            "FormCode": "AECP 5318",
+            "IsCustomEntry": false,
+            "Version": "(12.14)",
+            "IsChanged": false,
+            "UWFormId": 0,
+            "Rated": false,
+            "AllowMultiples": false
+        },
+        {
+            "FormCode": "AECP 5311",
+            "IsCustomEntry": false,
+            "Version": "(07.14)",
+            "IsChanged": false,
+            "UWFormId": 0,
+            "Rated": false,
+            "AllowMultiples": false
+        },
+        {
+            "FormCode": "AECP 5316A",
+            "IsCustomEntry": false,
+            "Version": "(07.14)",
+            "IsChanged": false,
+            "UWFormId": 0,
+            "Rated": false,
+            "AllowMultiples": false
+        }
+    ],
+    "NoticeTextCollection": [],
+    "Subjectivities": [
+        {
+            "PolicySubjectivityId": 0,
+            "SubjectivityTypeId": 2,
+            "SubjectivityType": "Forms",
+            "SubjectivityDescription": "Prior Year Contractors Pollution Liability Declarations Page",
+            "IsResolved": false
+        },
+        {
+            "PolicySubjectivityId": 0,
+            "SubjectivityTypeId": 5,
+            "SubjectivityType": "Required to Quote",
+            "SubjectivityDescription": "Contractors Pollution Liability Current 5-Year Loss Run(s)",
+            "IsResolved": false
+        },
+        {
+            "PolicySubjectivityId": 0,
+            "SubjectivityTypeId": 2,
+            "SubjectivityType": "Forms",
+            "SubjectivityDescription": "Prior Year Contractors Professional Liability Declarations Page",
+            "IsResolved": false
+        },
+        {
+            "PolicySubjectivityId": 0,
+            "SubjectivityTypeId": 5,
+            "SubjectivityType": "Required to Quote",
+            "SubjectivityDescription": "Contractors Professional Liability Current 5-Year Loss Run(s)",
+            "IsResolved": false
+        }
+    ]
+}
