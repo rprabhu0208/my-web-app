@@ -3,6 +3,11 @@ export enum Status{
     DeActive
 }
 
+export class Role {
+    id: number;
+    role : string;
+}
+
 export class User {
     id:number;
     username : string;
@@ -11,7 +16,7 @@ export class User {
     lastname: string; 
     email : string;
     status: Status; 
-
+    role: Role;
     constructor(){
       this.status = Status.Active
     }

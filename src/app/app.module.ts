@@ -13,6 +13,7 @@ import { AuthGuard } from './auth-guard.service';
 import { UnAuthorizedComponent } from './components/UnAuthorizedComponent/unauthorized.component';
 import 'rxjs' 
 import { HomeModule } from './modules/HomeModule/home.module';
+import { DataService } from './services/dataservice';
  
  
 
@@ -31,7 +32,7 @@ import { HomeModule } from './modules/HomeModule/home.module';
     
     RouterModule.forRoot(router,{ useHash: true }) 
   ],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService,DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

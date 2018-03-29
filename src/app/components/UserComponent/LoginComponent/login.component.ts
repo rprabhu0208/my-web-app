@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms'
 import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
 import { User } from "../../../Models/user"; 
 import { ErrorCode } from "../../../Models/ErrorCode";
+import { DataService } from "../../../services/dataservice";
 
 
 
@@ -16,7 +17,7 @@ import { ErrorCode } from "../../../Models/ErrorCode";
 export class LoginComponent implements OnInit {
     errorMessage : string = "" ;   
     ErrorCode : typeof ErrorCode = ErrorCode;
-    constructor(private authService: AuthenticationService, private router: Router,private aRoute : ActivatedRoute) {
+    constructor(private authService: AuthenticationService, private router: Router,private aRoute : ActivatedRoute, private dataservice : DataService) {
         localStorage.clear()
       
     }
@@ -38,8 +39,10 @@ export class LoginComponent implements OnInit {
                 if (response) {
                     let user = new User();
                     user = response; 
+                
                     if(user.email == form.value.email && user.password == form.value.password){ 
-                        localStorage.setItem('currentUser',JSON.stringify(user))
+                        this.dataservice.user = user;
+                        // localStorage.setItem('currentUser',JSON.stringify(user))
                         return  this.router.navigate(['dashboard'])  
                     }
                     else {

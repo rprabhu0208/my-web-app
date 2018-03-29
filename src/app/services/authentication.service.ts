@@ -8,10 +8,11 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, RouterStateSnapshot } from '@angular/router'; 
 import {Http,RequestOptions,Headers} from '@angular/http'
 import  'rxjs'
+import { DataService } from './dataservice';
 @Injectable()
 export class AuthenticationService   {  
     loggedIn = new BehaviorSubject<boolean>(false) 
-    constructor(private router: Router, private http : Http ){
+    constructor(private router: Router, private http : Http, private dataservice : DataService ){
        
     }
 
@@ -27,7 +28,7 @@ export class AuthenticationService   {
         var currentLoggedIn = false;
         const promise = new Promise(
             (resolve,reject) => {
-                if(localStorage.getItem('currentUser')){
+                if(this.dataservice.user){
                     this.loggedIn.next(true);
                 }
                 else {
@@ -41,9 +42,8 @@ export class AuthenticationService   {
     login(email:string,password:string) : Observable<User>{
      
             return this.http
-                    .get('http://localhost:5000/users?email='+ email)
-                    .map((response) => {
-                        console.log(response)
+                    .get('http://localhost:5000/users?email='+ email + '&_expand=role')
+                    .map((response) => { 
                         return response.json()[0];
             })  
         // return this.http.get('http://localhost:5000/users?email='+ email).subscribe(
@@ -91,7 +91,7 @@ export class AuthenticationService   {
  
 
     logout(){  
-        localStorage.clear() 
+        this.dataservice.user = null ;        
         this.loggedIn.next(false); 
         this.router.navigate(['login'])
     }   
