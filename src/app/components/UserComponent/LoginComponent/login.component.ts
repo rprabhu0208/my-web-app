@@ -12,6 +12,8 @@ import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
 })
 export class LoginComponent implements OnInit {
 
+    loadchildren : boolean = true;
+
     constructor(private authService : AuthenticationService,private router: Router){
         localStorage.clear()
     }
@@ -19,6 +21,7 @@ export class LoginComponent implements OnInit {
      
     }
     login(form: NgForm){ 
-       this.authService.login(form.value.email,form.value.password)  
+       this.authService.login(form.value.email,form.value.password) 
+      
     }
 }
