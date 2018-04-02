@@ -1,0 +1,99 @@
+<html> 
+    <head>
+        <script type="text/javascript" src="jquery-3.3.1.js" ></script>
+           <!--More Info at https://jqueryvalidation.org/documentation/ -->
+        <script type="text/javascript" src="jquery.validate.js" ></script>
+        <script type="text/javascript" >
+          function setSession(){
+                    sessionStorage.setItem("lastname", "Smith");
+                    enabledMenu();
+                }
+                function enabledMenu(){
+                    if(sessionStorage.getItem("lastname")){
+                    $('ul#test li').removeClass('hide');
+                }
+                }
+                
+            $(document).ready(function(){
+                $("#commentForm").validate({
+                    rules: {
+                        name:{
+                            required:true
+                        },
+                        email:{
+                            required:true,
+                            email:true
+                        },
+                        category:{
+                            required:true
+                        }
+                    },
+                    messages:{
+                        name:{
+                            required : "Please enter name"
+                        },
+                        email:{
+                            required : "Please enter email"
+                        },
+                        category:{
+                            required :"Please select category"
+                        }
+                    },
+                    submitHandler: function(form) {
+                        // do other things for a valid form
+                        form.submit();
+                    }
+
+                });
+
+                $('.yrs-accrd').click(function(){
+                    
+                })
+              
+               
+               
+               // $('ul#test li').removeClass('hide');
+            })
+        
+        </script>
+        <style type="text/css">
+        .hide { display: none}
+        </style>
+    </head>
+    <body>
+        <ul id="test">
+            <li class="hide"><a href="/text"> hide 1</a></li>
+            <li  class="hide" > <a href="/text"> hide 2</a></li>
+            <li>Menu 3</li>
+
+        </ul>
+
+        <input type="button" value="submit" onclick="setSession()"  >
+
+            <form class="cmxform" id="commentForm" method="post" action="">
+                    <fieldset>
+                      <legend>Please provide your name, email address (won't be published) and a comment</legend>
+                      <p>
+                        <label for="cname">Name  </label>
+                        <input id="cname" name="name"   type="text" >
+                      </p>
+                      <p>
+                        <label for="cemail">E-Mail (required)</label>
+                        <input id="cemail" type="email" name="email" >
+                      </p>
+                      <p>
+                        <label for="category">category</label>
+                          <select name="category" id="category">
+                              <option > Select </option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                          </select>
+                      </p>
+                      <p>
+                        <input class="submit" type="submit" value="Submit">
+                      </p>
+                    </fieldset>
+                  </form>
+    </body>
+</html>

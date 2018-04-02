@@ -1,0 +1,34 @@
+{
+    "users" :[
+        {
+            "id" :1,
+            "firstname":"rohan",
+            "lastname":"prabhu",
+            "password":"rohan",
+            "username":"rohan",
+            "email":"rohan.prabhu@gmail.com",
+            "roleId" :1 
+        },
+        {
+            "id" :2,
+            "firstname":"akash",
+            "lastname":"jain",
+            "password":"akash",
+            "username":"akash",
+            "email":"akash@gmail.com",
+            "roleId" :2 
+        }
+
+    ],
+    "roles" :[
+        {
+            "id":1,
+            "role":"Admin"
+        },
+        {
+            "id":2,
+            "role": "User"
+        }
+    ]
+
+}

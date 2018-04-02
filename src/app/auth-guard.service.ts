@@ -26,6 +26,12 @@ export class AuthGuard implements CanActivate , CanActivateChild, CanLoad {
         )
     }
 
+    isAuthorisedAdmin(){
+        if(this.isAuthenticated()){
+            return true;
+        }
+    }
+
     canActivate(route: ActivatedRouteSnapshot,
                 state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean{ 
                     console.log(route.url)
