@@ -5,14 +5,14 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from '../../components/UserComponent/LoginComponent/login.component';
 import {homeRouter } from './home.router'
 import { AuthenticationService } from '../../services/authentication.service';
-import { DashBoardComponent } from '../../components/DashBoard/dashboard.component';
-import { AuthGuard } from '../../auth-guard.service';
-
+import { DashBoardComponent } from '../../components/DashBoard/dashboard.component';  
 import { RegisterComponent } from '../../components/UserComponent/RegistrationComponent/register.component';
  
 import { DataService } from '../../services/dataservice';
 import { SideMenuComponent } from '../../components/Dashboard/sidemenucomponent/sidemenu.component';
 import { DashBoardIndexComponent } from '../../components/Dashboard/dashboardindex.component';
+import { RoleGaurd } from '../../guards/role-guard.service';
+import { AuthGuard } from '../../guards/auth-guard.service';
  
 
 
@@ -22,7 +22,7 @@ import { DashBoardIndexComponent } from '../../components/Dashboard/dashboardind
         ,DashBoardIndexComponent
     ],
     imports: [homeRouter,  FormsModule, ReactiveFormsModule, CommonModule],
-    providers: [AuthGuard,DataService]
+    providers: [DataService,RoleGaurd,AuthGuard]
     
    
 })

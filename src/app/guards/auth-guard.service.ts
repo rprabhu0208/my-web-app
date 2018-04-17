@@ -1,12 +1,12 @@
 import { CanActivate ,  ActivatedRouteSnapshot, RouterStateSnapshot  } from "@angular/router";
-
-import { AuthenticationService } from "./services/authentication.service";
+ 
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { Router ,Route} from "@angular/router";
 import { CanActivateChild, CanLoad } from "@angular/router/src/interfaces";
 import { debug } from "util";
-import { User } from "./Models/user";
+import { AuthenticationService } from "../services/authentication.service";
+
  
 @Injectable()
 export class AuthGuard implements CanActivate , CanActivateChild, CanLoad {
@@ -25,16 +25,9 @@ export class AuthGuard implements CanActivate , CanActivateChild, CanLoad {
             } 
         )
     }
-
-    isAuthorisedAdmin(){
-        if(this.isAuthenticated()){
-            return true;
-        }
-    }
-
+ 
     canActivate(route: ActivatedRouteSnapshot,
-                state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean{ 
-                    console.log(route.url)
+                state: RouterStateSnapshot): Promise<boolean>  {  
            return this.isAuthenticated();
     }
     canActivateChild(route: ActivatedRouteSnapshot,

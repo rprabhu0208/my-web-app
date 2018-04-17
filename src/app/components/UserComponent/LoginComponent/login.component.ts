@@ -38,8 +38,7 @@ export class LoginComponent implements OnInit {
             (response) => { 
                 if (response) {
                     let user = new User();
-                    user = response; 
-                
+                    user = response;  
                     if(user.email == form.value.email && user.password == form.value.password){ 
                         this.dataservice.user = user;
                         // localStorage.setItem('currentUser',JSON.stringify(user))

@@ -1,6 +1,5 @@
 import { RouterModule, Routes } from '@angular/router'
 import { ModuleWithProviders } from '@angular/core'
-import { AuthGuard } from './auth-guard.service';
 import { Component } from '@angular/core/src/metadata/directives';
 import { UnAuthorizedComponent } from './components/UnAuthorizedComponent/unauthorized.component';
 

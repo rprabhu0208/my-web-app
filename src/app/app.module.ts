@@ -9,7 +9,7 @@ import {HeaderComponent} from '../app/components/HeaderComponent/header.componen
 import { NavBarComponent } from './components/HeaderComponent/NavBarComponent/navbar.component';
 import { router } from '../app/app.router'
 import { AuthenticationService } from './services/authentication.service';
-import { AuthGuard } from './auth-guard.service';
+
 import { UnAuthorizedComponent } from './components/UnAuthorizedComponent/unauthorized.component';
 import 'rxjs' 
 import { HomeModule } from './modules/HomeModule/home.module';
