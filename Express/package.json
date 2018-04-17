@@ -1,0 +1,17 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sqlserver.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "msnodesqlv8": "^0.5.4",
+    "mssql": "^ 3.3.0"
+  },
+  "scripts": {
+    "start": "node sqlserver.js"
+  },
+  "author": "Rohan",
+  "license": "ISC"
+}
