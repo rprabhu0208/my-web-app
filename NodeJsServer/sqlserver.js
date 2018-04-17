@@ -21,7 +21,8 @@ app.use(function (req, res, next) {
     var port = server.address().port;
     console.log("App now running on port", port);
  }); 
- const connectionString = "server=192.168.243.2;Database=Northwind;Trusted_Connection=Yes;Driver={SQL Server Native Client 11.0}";
+ //const connectionString = "server=192.168.243.2;Database=Northwind;Trusted_Connection=Yes;Driver={SQL Server Native Client 11.0}";
+ const connectionString = "server=IND-ARLIDW70076\SQLEXPRESS;Database=Northwind;Trusted_Connection=Yes;Driver={SQL Server Native Client 11.0}" 
 //Function to connect to database and execute query
 var  executeQuery = function(res, query){             
     sql.query(connectionString, query, (err, rows) => {
