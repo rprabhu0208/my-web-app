@@ -12,11 +12,9 @@ export class RoleGaurd implements CanActivate {
     }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
-        debugger;
-        return this.authguard.canActivate(route, state).then((auth: boolean) => {
-            if (!auth) {
-                return Promise.resolve(false)
-            }
+       
+        return this.authguard.canActivate(route, state).then((auth: boolean) => { 
+            return Promise.resolve(auth);
         }
         )
     }

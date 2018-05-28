@@ -13,6 +13,9 @@ import { SideMenuComponent } from '../../components/Dashboard/sidemenucomponent/
 import { DashBoardIndexComponent } from '../../components/Dashboard/dashboardindex.component';
 import { RoleGaurd } from '../../guards/role-guard.service';
 import { AuthGuard } from '../../guards/auth-guard.service';
+import { OAuthComponent } from '../../components/UserComponent/oAuthComponent/oauth.component';
+import { ChildComponent } from '../../components/UserComponent/ChildComponent/child.component';
+import { UserProfileComponent } from '../../components/UserComponent/UserProfileComponent/userprofile.component';
  
 
 
@@ -20,6 +23,9 @@ import { AuthGuard } from '../../guards/auth-guard.service';
     declarations :[LoginComponent,DashBoardComponent,RegisterComponent
         ,SideMenuComponent
         ,DashBoardIndexComponent
+        ,OAuthComponent
+        ,ChildComponent        
+        ,UserProfileComponent
     ],
     imports: [homeRouter,  FormsModule, ReactiveFormsModule, CommonModule],
     providers: [DataService,RoleGaurd,AuthGuard]

@@ -37,6 +37,7 @@ export class AuthenticationService   {
                 resolve(this.loggedIn.getValue()) 
             }
         )
+        console.dir(promise)
         return promise;  
     }
     login(email:string,password:string) : Observable<User>{

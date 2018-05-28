@@ -5,6 +5,7 @@ import { DashBoardComponent } from '../../components/DashBoard/dashboard.compone
 import { RegisterComponent } from '../../components/UserComponent/RegistrationComponent/register.component';
 import { DashBoardIndexComponent } from '../../components/Dashboard/dashboardindex.component';
 import { RoleGaurd } from '../../guards/role-guard.service';
+import { UserProfileComponent } from '../../components/UserComponent/UserProfileComponent/userprofile.component';
  
  
 
@@ -26,9 +27,14 @@ const HOME_ROUTER : Routes = [
         component : DashBoardComponent,
         canActivate :[RoleGaurd],
         children :[
-            { path:'',
-            component: DashBoardIndexComponent
-        }
+            { 
+                path:'',
+                component: DashBoardIndexComponent
+            },
+            {
+                path:'UserProfile',
+                component : UserProfileComponent
+            }
         ]
     }
 

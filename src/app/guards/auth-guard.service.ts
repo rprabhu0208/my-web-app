@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate , CanActivateChild, CanLoad {
 
     }
 
-    isAuthenticated(){
+    isAuthenticated(){ 
         return this.authService.isAuthencated().then( 
             (currentUser: boolean) => {   
                 if(currentUser )

@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
                     user = response;  
                     if(user.email == form.value.email && user.password == form.value.password){ 
                         this.dataservice.user = user;
-                        // localStorage.setItem('currentUser',JSON.stringify(user))
+                         //localStorage.setItem('currentUser',JSON.stringify(user))
                         return  this.router.navigate(['dashboard'])  
                     }
                     else {

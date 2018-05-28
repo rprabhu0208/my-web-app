@@ -17,55 +17,43 @@ app.use(function (req, res, next) {
 });
 
 //Setting up server
- var server = app.listen(process.env.PORT || 8080, function () {
+ var server = app.listen(process.env.PORT || 9090, function () {
     var port = server.address().port;
     console.log("App now running on port", port);
  }); 
  //const connectionString = "server=192.168.243.2;Database=Northwind;Trusted_Connection=Yes;Driver={SQL Server Native Client 11.0}";
- const connectionString = "server=IND-ARLIDW70076\SQLEXPRESS;Database=Northwind;Trusted_Connection=Yes;Driver={SQL Server Native Client 11.0}" 
+ const connectionString = "server=IND-ARLIDW70076\\SQLEXPRESS;Database=NORTHWND;Trusted_Connection=Yes;Driver={SQL Server Native Client 11.0}" 
 //Function to connect to database and execute query
 var  executeQuery = function(res, query){             
     sql.query(connectionString, query, (err, rows) => {
-        res.send(rows);
-    });
-    //  sql.connect(dbConfig, function (err) {
-    //      if (err) {   
-    //                  console.log("Error while connecting database :- " + err);
-    //                  res.send(err);
-    //               }
-    //               else {
-    //                      // create Request object
-    //                      var request = new sql.Request();
-    //                      // query to the database
-    //                      request.query(query, function (err, res) {
-    //                        if (err) {
-    //                                   console.log("Error while querying database :- " + err);
-    //                                   res.send(err);
-    //                                  }
-    //                                  else {
-    //                                    res.send(res);
-    //                                         }
-    //                            });
-    //                    }
-    //   });           
+        console.log(err)
+        if(err){
+            console.log("Error while connecting database :- " + err);
+            res.send(err);
+        }
+        else {
+            res.send(rows);
+        }
+        
+    });    
 }
 
 //GET API
 app.get("/api/Employees", function(req , res){
-                var query = "select Top 2 FirstName from [Employees]";
-                executeQuery (res, query);
+                var query = "select Top 200 FirstName from [Employees]"; 
+                executeQuery(res, query);
 });
 
 //POST API
  app.post("/api/Employees", function(req , res){
                 var query = "INSERT INTO [Employees] (Name,Email,Password) VALUES (req.body.Name,req.body.Email,req.body.Password);"
-                executeQuery (res, query);
+                executeQuery(res, query);
 });
 
 //PUT API
  app.put("/api/Employees/:id", function(req , res){
                 var query = "UPDATE [Employees] SET Name= " + req.body.Name  +  " , Email=  " + req.body.Email + "  WHERE Id= " + req.params.id;
-                executeQuery (res, query);
+                executeQuery(res, query);
 });
 
 // DELETE API
